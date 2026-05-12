@@ -1,0 +1,431 @@
+/* --------------------------------------------------
+   GLOBAL RESET
+-------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   BODY
+-------------------------------------------------- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------
+   NAVBAR
+-------------------------------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.navbar ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #fff;
+  border-bottom: 2px solid #ff6bcb;
+}
+
+/* --------------------------------------------------
+   HERO SECTION
+-------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 45px 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  display: inline-block;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 6px;
+  background: conic-gradient(#ff6bcb,#ff9a62,#ffd36b,#6bffb3,#6bb8ff,#b36bff,#ff6bcb);
+  box-shadow: 0 0 15px rgba(255, 107, 203, 0.6);
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 22px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #ff6bcb, #ff9a62);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* --------------------------------------------------
+   CONTENT WRAPPER
+-------------------------------------------------- */
+.content {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  color: #7ab8ff;
+}
+
+/* --------------------------------------------------
+   PROJECT CARDS
+-------------------------------------------------- */
+.project-card {
+  padding: 20px;
+  padding-bottom: 5px;
+  color: #7ab8ff;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.project-card h2 {
+  color: #7ab8ff !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  color: #7ab8ff;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------
+   PROJECT SLIDER
+-------------------------------------------------- */
+.project-slider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.slide-btn {
+  background: linear-gradient(135deg, #6bb8ff, #b36bff);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.slide-btn:hover {
+  transform: translateY(-3px);
+}
+
+.slider-caption {
+  margin-top: 4px;
+  height: 22px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7ab8ff;
+  text-align: center;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+/* --------------------------------------------------
+   RESUME PAGE
+-------------------------------------------------- */
+.resume-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.resume-btn {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.resume-preview {
+  width: 100%;
+  height: 650px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* --------------------------------------------------
+   CONTACT PAGE
+-------------------------------------------------- */
+.contact-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.contact-card p {
+  color: #e8e8e8;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.contact-card textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-card .btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6bb8ff, #b36bff);
+  border-radius: 8px;
+  color: white;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(123,184,255,0.15);
+  backdrop-filter: blur(8px);
+  color: #7ab8ff;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   NBA FACT BOX
+-------------------------------------------------- */
+.fact-box {
+  margin-top: 20px;
+  font-size: 1.15rem;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  padding: 18px 22px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 60px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.nba-btn {
+  background: linear-gradient(135deg, #f57c00, #ff9800);
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------
+   GLOBAL TYPOGRAPHY RESTORE (BEST FIX)
+-------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  color: #7ab8ff;
+}
+
+p {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  color: #e8e8e8;
+  letter-spacing: 0.2px;
+}
+/* --------------------------------------------------
+   SOCIAL BAR (Glassmorphism Vertical)
+-------------------------------------------------- */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  z-index: 999;
+}
+
+
+.social-bar::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #ff6bcb, #6bb8ff);
+  opacity: 0.55;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(123,184,255,0.9));
+}
+
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Contact – Tim Akor</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+  <h2 class="logo">Tim Akor</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contacts.html" class="active">Contact</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+
+
+  <!-- HERO SECTION (same style as other pages) -->
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Contact Me</h1>
+      <p>If you'd like to reach out, feel free to send me a message using the form below.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM CARD -->
+  <div class="content">
+    <div class="contact-card">
+      <form action="https://formspree.io/f/xnjwlkdj" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <div id="successMessage" class="success-message">
+        ✅ Message sent successfully!
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const successBox = document.getElementById("successMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/xnjwlkdj", {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      successBox.classList.add("show");
+      form.reset();
+    }
+  });
+});
+</script>
+
+</body>
+</html>

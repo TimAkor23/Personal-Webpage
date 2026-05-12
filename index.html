@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Akor | Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+<div class="social-bar">
+  <a href="https://instagram.com" target="_blank">
+    <img src="images/instagram.png" class="social-icon">
+  </a>
+  <a href="https://linkedin.com" target="_blank">
+    <img src="images/linkedin.png" class="social-icon">
+  </a>
+  <a href="https://github.com" target="_blank">
+    <img src="images/github.png" class="social-icon">
+  </a>
+</div>
+  <nav class="navbar">
+    <h2 class="logo">Tim Akor</h2>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-card">
+      <img src="images/newhead.jpg" alt="Photo of Tim Akor" class="profile-pic">
+
+      <h1>Hello, I'm Tim!</h1>
+      <p>I am a junior computer science major from Union NJ.</p>
+      <p>Some of my favorite things to do are listen to music, hang out with friends, and play basketball!</p>
+
+      <button class="btn nba-btn" onclick="generateNBAFact()">🏀 Generate NBA Fact</button>
+      <p id="nba-fact" class="fact-box"></p>
+    </div>
+  </header>
+
+  <script>
+    const facts = [
+      "Michael Jordan won 6 championships with the Bulls.",
+      "LeBron James is the only player with 40,000+ career points.",
+      "Steph Curry holds the record for most 3-pointers made.",
+      "Wilt Chamberlain once scored 100 points in a single game.",
+      "Kareem Abdul-Jabbar held the scoring record for 39 years.",
+      "Shaquille O’Neal made only one career three-pointer.",
+      "The NBA added the 3-point line in 1979.",
+      "Muggsy Bogues was only 5'3\" tall.",
+      "The Boston Celtics have the most NBA championships.",
+      "Kobe Bryant scored 81 points in a single game.",
+      "Bam Adebayo scored 83 point in a single game.",
+      "Lebron James is the all time leading scorer in the Nba.",
+      "There are 30 teams in Nba.",
+      "Lebron James and Bronny James are the only father son duo to play on the same team",
+      "Dennis Rodman once grabbed 34 rebounds in one game.",
+      "A regulation basketball hoop is ten feet high.",
+      "Players are not allowed to wear the number 69.",
+      "George Muresan is the tallest player ever standing at 7'7.",
+      "A regulated court is 94 ft long and 50 ft wide.",
+      "The first basketball hoops had bottoms on them. Someone would have to climb on a ladder everyone someone scored",
+      "The fastest record nba shot was 118mph.",
+      "The 2016 Golden State Warriors hold the record of 73 wins in a 82 game season record",
+      "Jerry West is the inspired silhouette to the nba logo",
+      "A basketball has about 35,000 tiny bumps called pebbles to help players grip the ball better",
+    ];
+
+    function typeText(element, text, speed = 35) {
+      element.textContent = "";
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    function generateNBAFact() {
+      const factBox = document.getElementById("nba-fact");
+
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+
+      factBox.classList.remove("bounce");
+      void factBox.offsetWidth;
+      factBox.classList.add("bounce");
+
+      typeText(factBox, randomFact);
+    }
+  </script>
+
+</body>
+</html>

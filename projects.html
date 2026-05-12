@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Tim Akor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+  <h2 class="logo">Tim Akor</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="contacts.html">Contact</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+
+  <section class="content">
+    <h1>My Projects</h1>
+
+    <div class="project-card">
+
+      <div class="project-slider">
+        <img src="at-the-den.jpeg" alt="Student View" class="slide active">
+        <img src="admin.jpeg" alt="Admin View" class="slide">
+      </div>
+
+      <div class="slider-buttons">
+        <button class="slide-btn" onclick="prevSlide()">‹</button>
+        <button class="slide-btn" onclick="nextSlide()">›</button>
+      </div>
+
+      <div class="slider-caption" id="sliderCaption">Student View</div>
+
+      <h2>At-the-Den Alert</h2>
+      <p>
+        “At the Den is a mobile and web‑based emergency alert platform created for the Lincoln University campus community. 
+        It features an AI‑powered assistant that guides users through emergency procedures, 
+        answers urgent questions, and supports photo, video, and voice inputs for faster, more accurate responses.”
+
+      <a href="https://github.com/TimAkor23/At-the-den-alert" class="btn project-btn">View Project</a>
+    </div>
+
+  </section>
+
+  <script>
+    window.onload = function() {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const caption = document.getElementById('sliderCaption');
+
+      const captions = [
+        "Student View",
+        "Admin View"
+      ];
+
+     function showSlide(index) {
+        caption.style.opacity = 0;
+
+        setTimeout(() => {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+          });
+
+          caption.textContent = captions[index];
+          caption.style.opacity = 1;
+        }, 150);  
+      }
+
+      window.nextSlide = function() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      window.prevSlide = function() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+    };
+  </script>
+
+</body>
+</html>
